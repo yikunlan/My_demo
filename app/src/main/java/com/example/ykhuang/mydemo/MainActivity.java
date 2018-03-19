@@ -1,11 +1,13 @@
 package com.example.ykhuang.mydemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.androidtest.GetLayoutScreen;
 import com.example.ykhuang.mydemo.eventbus.EventBusActivity;
 import com.example.ykhuang.mydemo.rxjava.RxjavaActivity;
 
@@ -33,14 +35,7 @@ public class MainActivity extends AppCompatActivity{
         EventBus.getDefault().register(this);
     }
 
-//    private void findView() {
-//        tv_rxjava = (TextView) findViewById(R.id.tv_rxjava);
-//        tv_rxjava.setOnClickListener(this);
-//        tv_eventbus = (TextView) findViewById(R.id.tv_eventbus);
-//        tv_eventbus.setOnClickListener(this);
-//    }
-
-    @OnClick({R.id.tv_rxjava,R.id.tv_eventbus})
+    @OnClick({R.id.tv_rxjava,R.id.tv_eventbus,R.id.getLayoutScreen})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_rxjava:
@@ -48,6 +43,9 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.tv_eventbus:
                 EventBusActivity.open(this);
+                break;
+            case R.id.getLayoutScreen:
+                startActivity(new Intent(this, GetLayoutScreen.class));
                 break;
             default:
         }
