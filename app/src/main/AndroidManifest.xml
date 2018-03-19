@@ -2,6 +2,42 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ykhuang.mydemo">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 线程下载的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- QQ登录的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 使用location时候的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 模糊位置服务 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 精确的位置服务 -->
+    <!-- 调用相机因为需要写入本地图片，所以需要写入硬盘的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 自定义摄像头的权限和配置 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 微博的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 用于调用 JNI -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 添加桌面快捷方式的权限 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +55,9 @@
         <activity android:name=".rxjava.RxjavaActivity" />
         <activity android:name=".eventbus.EventBusActivity"></activity>
         <activity android:name="com.example.androidtest.GetLayoutScreen"/>
+        <activity android:name=".download.MulThreadDownload"/>
+        <activity android:name=".loading.MyProgressActivity"/>
+        <activity android:name=".loading.MProgressDialog"/>
     </application>
 
 </manifest>

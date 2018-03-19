@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.androidtest.GetLayoutScreen;
+import com.example.ykhuang.mydemo.download.MulThreadDownload;
 import com.example.ykhuang.mydemo.eventbus.EventBusActivity;
+import com.example.ykhuang.mydemo.loading.MProgressDialog;
+import com.example.ykhuang.mydemo.loading.MyProgressActivity;
 import com.example.ykhuang.mydemo.rxjava.RxjavaActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity{
         EventBus.getDefault().register(this);
     }
 
-    @OnClick({R.id.tv_rxjava,R.id.tv_eventbus,R.id.getLayoutScreen})
+    @OnClick({R.id.tv_rxjava,R.id.tv_eventbus,R.id.getLayoutScreen,R.id.download,R.id.progress_dialog})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_rxjava:
@@ -46,6 +49,15 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.getLayoutScreen:
                 startActivity(new Intent(this, GetLayoutScreen.class));
+                break;
+            case R.id.download:
+                startActivity(new Intent(this, MulThreadDownload.class));
+                break;
+            case R.id.progress_dialog:
+//                startActivity(new Intent(this, MyProgressActivity.class));
+                startActivity(new Intent(this, MProgressDialog.class));
+                //添加activity之间的过度动画
+                overridePendingTransition(R.anim.intent_int_ani, R.anim.intent_out_ani);
                 break;
             default:
         }
