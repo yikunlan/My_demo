@@ -46,7 +46,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="自定义的progressDialog、activity之间的过度动画" />
-
+        <Button
+            android:id="@+id/webveiw_cache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="缓存的webview"/>
 
     </LinearLayout>
 

@@ -58,6 +58,7 @@
         <activity android:name=".download.MulThreadDownload"/>
         <activity android:name=".loading.MyProgressActivity"/>
         <activity android:name=".loading.MProgressDialog"/>
+        <activity android:name="com.example.webviewcache.MyWebviewActivity"/>
     </application>
 
 </manifest>

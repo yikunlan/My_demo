@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.example.androidtest.GetLayoutScreen;
+import com.example.webviewcache.MyWebviewActivity;
+import com.example.webviewcache.MyWebviewClient;
 import com.example.ykhuang.mydemo.download.MulThreadDownload;
 import com.example.ykhuang.mydemo.eventbus.EventBusActivity;
 import com.example.ykhuang.mydemo.loading.MProgressDialog;
@@ -36,9 +39,10 @@ public class MainActivity extends AppCompatActivity{
 
         //注册eventBus
         EventBus.getDefault().register(this);
+
     }
 
-    @OnClick({R.id.tv_rxjava,R.id.tv_eventbus,R.id.getLayoutScreen,R.id.download,R.id.progress_dialog})
+    @OnClick({R.id.tv_rxjava,R.id.tv_eventbus,R.id.getLayoutScreen,R.id.download,R.id.progress_dialog,R.id.webveiw_cache})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_rxjava:
@@ -58,6 +62,9 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(new Intent(this, MProgressDialog.class));
                 //添加activity之间的过度动画
                 overridePendingTransition(R.anim.intent_int_ani, R.anim.intent_out_ani);
+                break;
+            case R.id.webveiw_cache:
+                startActivity(new Intent(this, MyWebviewActivity.class));
                 break;
             default:
         }
