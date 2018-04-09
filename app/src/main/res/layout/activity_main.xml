@@ -51,6 +51,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="缓存的webview"/>
+        <Button
+            android:id="@+id/speek_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="科大讯飞集成" />
 
     </LinearLayout>
 

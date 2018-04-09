@@ -16,6 +16,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets{
+            main { //这个配置是必须的，如果你的so文件放在了libs/armeabi/下，则下面srcDir = libs即可,如果放在'src / main / jniLibs '下就这么配置jniLibs.srcDirs = ['src / main / jniLibs ']
+                jniLibs.srcDirs = ['libs']
+            }
+    }
 }
 
 dependencies {
@@ -23,7 +28,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //rxjava2
@@ -34,4 +38,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     testCompile 'junit:junit:4.12'
+    implementation files('libs/Sunflower.jar')
 }
