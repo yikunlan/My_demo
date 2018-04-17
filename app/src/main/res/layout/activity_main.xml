@@ -56,6 +56,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="科大讯飞集成" />
+        <Button
+            android:id="@+id/mvvm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mvvm框架" />
 
     </LinearLayout>
 

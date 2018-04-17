@@ -1,12 +1,11 @@
-package com.example.webviewcache;
+package com.example.ykhuang.mydemo.webviewcache;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.webkit.WebView;
-import android.widget.LinearLayout;
 
-import com.example.webviewcache.cache.LocalResourcesCacheIndex;
+import com.example.ykhuang.mydemo.webviewcache.cache.LocalResourcesCacheIndex;
 import com.example.ykhuang.mydemo.R;
 
 import butterknife.BindView;

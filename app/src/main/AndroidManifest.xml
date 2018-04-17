@@ -74,7 +74,7 @@
         <activity android:name=".download.MulThreadDownload"/>
         <activity android:name=".loading.MyProgressActivity"/>
         <activity android:name=".loading.MProgressDialog"/>
-        <activity android:name="com.example.webviewcache.MyWebviewActivity"/>
+        <activity android:name=".webviewcache.MyWebviewActivity"/>
 
         <!--科大讯飞-->
         <activity android:name="com.example.ykhuang.mydemo.speek.SpeekActivity"/>
@@ -137,6 +137,8 @@
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
+
+        <activity android:name="com.example.ykhuang.mydemo.mvvp.simple_demo.SimpleMvvmActivity"/>
     </application>
 
 </manifest>

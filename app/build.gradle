@@ -21,6 +21,10 @@ android {
                 jniLibs.srcDirs = ['libs']
             }
     }
+    //mvvm
+    dataBinding{
+        enabled true
+    }
 }
 
 dependencies {
@@ -39,4 +43,5 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     testCompile 'junit:junit:4.12'
     implementation files('libs/Sunflower.jar')
+
 }

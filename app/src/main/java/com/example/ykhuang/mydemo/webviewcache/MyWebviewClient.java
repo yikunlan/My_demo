@@ -1,4 +1,4 @@
-package com.example.webviewcache;
+package com.example.ykhuang.mydemo.webviewcache;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -10,8 +10,8 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.example.webviewcache.cache.LocalResourcesCache;
-import com.example.webviewcache.cache.LocalResourcesManager;
+import com.example.ykhuang.mydemo.webviewcache.cache.LocalResourcesCache;
+import com.example.ykhuang.mydemo.webviewcache.cache.LocalResourcesManager;
 
 import java.io.InputStream;
 import java.util.concurrent.ExecutorService;
