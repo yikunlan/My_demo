@@ -24,6 +24,9 @@ public class SimpleViewModel {
         mSimpleModel.setName("阿姆斯特丹洛特");
 
         activitySimpleMvvpBinding.setModel(mSimpleModel);
+
+        SimpleModel2 simpleModel2 = new SimpleModel2();
+        activitySimpleMvvpBinding.setModel2(simpleModel2);
     }
 
 

@@ -44,4 +44,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     implementation files('libs/Sunflower.jar')
 
+    //databinding的适配器
+    compile 'me.tatarka:bindingcollectionadapter:0.16'
+
 }
