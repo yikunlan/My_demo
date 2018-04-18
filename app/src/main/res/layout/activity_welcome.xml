@@ -8,41 +8,10 @@
     android:fitsSystemWindows="true"
     android:background="#ddaaee">
 
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <android.support.design.widget.AppBarLayout
+    <include
+        layout="@layout/app_bar_demo_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-    </android.support.design.widget.AppBarLayout>
-
-    <!--<FrameLayout-->
-        <!--android:id="@+id/contentFrame"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/body"
-                android:scaleType="fitXY"/>
-        </LinearLayout>
-
-</LinearLayout>
-
+        android:layout_height="match_parent" />
     <!-- Navigation Drawer -->
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

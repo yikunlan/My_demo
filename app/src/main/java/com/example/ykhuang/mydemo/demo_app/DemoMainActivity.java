@@ -54,6 +54,11 @@ public class DemoMainActivity extends AppCompatActivity
         }
     }
 
+    /***
+     * 右边的三个点
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

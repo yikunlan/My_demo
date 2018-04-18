@@ -126,7 +126,8 @@
         <activity android:name=".mvvp.simple_demo.SimpleMvvmActivity" />
         <activity
             android:name=".demo_app.WelcomeActivity"
-            android:theme="@style/Base.AppTheme" />
+            android:label="@string/title_activity_demo_main"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".demo_app.DemoMainActivity"
             android:label="@string/title_activity_demo_main"
