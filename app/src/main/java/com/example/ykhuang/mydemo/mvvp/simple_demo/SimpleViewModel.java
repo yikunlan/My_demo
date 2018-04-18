@@ -25,8 +25,6 @@ public class SimpleViewModel {
 
         activitySimpleMvvpBinding.setModel(mSimpleModel);
 
-        SimpleModel2 simpleModel2 = new SimpleModel2();
-        activitySimpleMvvpBinding.setModel2(simpleModel2);
     }
 
 

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ykhuang.mydemo">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- 线程下载的权限 -->
@@ -38,7 +37,7 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <!--科大讯飞的权限-->
+    <!-- 科大讯飞的权限 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -54,12 +53,12 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".MyApplication"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -69,76 +68,69 @@
             </intent-filter>
         </activity>
         <activity android:name=".rxjava.RxjavaActivity" />
-        <activity android:name=".eventbus.EventBusActivity"></activity>
-        <activity android:name=".screenshot.GetLayoutScreen"/>
-        <activity android:name=".download.MulThreadDownload"/>
-        <activity android:name=".loading.MyProgressActivity"/>
-        <activity android:name=".loading.MProgressDialog"/>
-        <activity android:name=".webviewcache.MyWebviewActivity"/>
+        <activity android:name=".eventbus.EventBusActivity" />
+        <activity android:name=".screenshot.GetLayoutScreen" />
+        <activity android:name=".download.MulThreadDownload" />
+        <activity android:name=".loading.MyProgressActivity" />
+        <activity android:name=".loading.MProgressDialog" />
+        <activity android:name=".webviewcache.MyWebviewActivity" />
 
-        <!--科大讯飞-->
-        <activity android:name="com.example.ykhuang.mydemo.speek.SpeekActivity"/>
-        <activity android:name="com.example.ykhuang.mydemo.speek.setting.TtsSettings" >
-        </activity>
-        <activity android:name="com.example.ykhuang.mydemo.speek.setting.IatSettings" >
-        </activity>
+        <!-- 科大讯飞 -->
+        <activity android:name=".speek.SpeekActivity" />
+        <activity android:name=".speek.setting.TtsSettings"></activity>
+        <activity android:name=".speek.setting.IatSettings"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.IatDemo"
+            android:name=".speek.IatDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.AsrDemo"
+            android:name=".speek.AsrDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.TtsDemo"
+            android:name=".speek.TtsDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.IseDemo"
+            android:name=".speek.IseDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.VocalVerifyDemo"
+            android:name=".speek.VocalVerifyDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.OnlineFaceDemo"
+            android:name=".speek.OnlineFaceDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.GroupManagerActivity"
+            android:name=".speek.GroupManagerActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.FaceIdentifyActivity"
+            android:name=".speek.FaceIdentifyActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.VocalIdentifyActivity"
+            android:name=".speek.VocalIdentifyActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.ResultIdentifyActivity"
+            android:name=".speek.ResultIdentifyActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.example.ykhuang.mydemo.speek.setting.IseSettings"
+            android:name=".speek.setting.IseSettings"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
-
-        <activity android:name="com.example.ykhuang.mydemo.mvvp.simple_demo.SimpleMvvmActivity"/>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".mvvp.simple_demo.SimpleMvvmActivity" />
+        <activity
+            android:name=".demo_app.WelcomeActivity"
+            android:theme="@style/Base.AppTheme" />
+        <activity
+            android:name=".demo_app.DemoMainActivity"
+            android:label="@string/title_activity_demo_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

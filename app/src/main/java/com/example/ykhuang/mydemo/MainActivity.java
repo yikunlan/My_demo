@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.ykhuang.mydemo.demo_app.DemoMainActivity;
+import com.example.ykhuang.mydemo.demo_app.WelcomeActivity;
 import com.example.ykhuang.mydemo.mvvp.simple_demo.SimpleMvvmActivity;
 import com.example.ykhuang.mydemo.webviewcache.MyWebviewActivity;
 import com.example.ykhuang.mydemo.download.MulThreadDownload;
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     @OnClick({R.id.tv_rxjava,R.id.tv_eventbus,R.id.getLayoutScreen,R.id.download,R.id.progress_dialog,R.id.webveiw_cache,
-    R.id.speek_btn,R.id.mvvm_btn})
+    R.id.speek_btn,R.id.mvvm_btn,R.id.app_btn})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_rxjava:
@@ -71,6 +73,10 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.mvvm_btn:
                 startActivity(new Intent(this, SimpleMvvmActivity.class));
+                break;
+            case R.id.app_btn:
+                startActivity(new Intent(this, DemoMainActivity.class));
+//                startActivity(new Intent(this, WelcomeActivity.class));
                 break;
             default:
         }

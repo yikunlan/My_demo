@@ -23,22 +23,40 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:background">@null</item>
         <item name="android:backgroundDimEnabled">false</item><!-- 大背景变透明，包含你的那个布局变透明 -->
-        <item name="android:windowBackground"> @android:color/transparent </item><!-- 小背景变头透明，本身的布局变透明 -->
+        <item name="android:windowBackground">@android:color/transparent
+        </item><!-- 小背景变头透明，本身的布局变透明 -->
     </style>
 
 
     <!--<style name="dialog" parent="@android:style/Theme.Dialog">-->
-        <!--<item name="android:windowFrame">@null</item>-->
-        <!--<item name="android:windowIsFloating">true</item>-->
-        <!--<item name="android:windowIsTranslucent">true</item>-->
-        <!--<item name="android:windowNoTitle">true</item>-->
-        <!--<item name="android:background">@android:color/transparent</item>-->
-        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
-        <!--<item name="android:backgroundDimEnabled">true</item>-->
-        <!--<item name="android:backgroundDimAmount">0.6</item>-->
+    <!--<item name="android:windowFrame">@null</item>-->
+    <!--<item name="android:windowIsFloating">true</item>-->
+    <!--<item name="android:windowIsTranslucent">true</item>-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--<item name="android:background">@android:color/transparent</item>-->
+    <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+    <!--<item name="android:backgroundDimEnabled">true</item>-->
+    <!--<item name="android:backgroundDimAmount">0.6</item>-->
     <!--</style>-->
 
     <style name="textStyle">
         <item name="android:textSize">16sp</item>
     </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
