@@ -62,10 +62,15 @@
             android:layout_height="wrap_content"
             android:text="mvvm框架" />
         <Button
-            android:id="@+id/app_btn"
+            android:id="@+id/drawer_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="app_demo" />
+            android:text="侧滑" />
+        <Button
+            android:id="@+id/tab_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tab的示例" />
 
     </LinearLayout>
 

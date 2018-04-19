@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.ykhuang.mydemo.demo_app.DemoMainActivity;
+import com.example.ykhuang.mydemo.demo_app.TabActivity;
 import com.example.ykhuang.mydemo.demo_app.WelcomeActivity;
 import com.example.ykhuang.mydemo.mvvp.simple_demo.SimpleMvvmActivity;
 import com.example.ykhuang.mydemo.webviewcache.MyWebviewActivity;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     @OnClick({R.id.tv_rxjava,R.id.tv_eventbus,R.id.getLayoutScreen,R.id.download,R.id.progress_dialog,R.id.webveiw_cache,
-    R.id.speek_btn,R.id.mvvm_btn,R.id.app_btn})
+    R.id.speek_btn,R.id.mvvm_btn,R.id.drawer_btn,R.id.tab_btn})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_rxjava:
@@ -74,9 +75,12 @@ public class MainActivity extends AppCompatActivity{
             case R.id.mvvm_btn:
                 startActivity(new Intent(this, SimpleMvvmActivity.class));
                 break;
-            case R.id.app_btn:
+            case R.id.drawer_btn:
                 startActivity(new Intent(this, DemoMainActivity.class));
 //                startActivity(new Intent(this, WelcomeActivity.class));
+                break;
+            case R.id.tab_btn:
+                startActivity(new Intent(this, TabActivity.class));
                 break;
             default:
         }

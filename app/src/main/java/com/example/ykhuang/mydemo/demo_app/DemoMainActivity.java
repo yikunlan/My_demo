@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.ykhuang.mydemo.R;
 
@@ -89,15 +90,21 @@ public class DemoMainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            Toast.makeText(this,"nav_camera",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gallery) {
+            Toast.makeText(this,"nav_gallery",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_slideshow) {
+            Toast.makeText(this,"nav_slideshow",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_manage) {
+            Toast.makeText(this,"nav_manage",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_share) {
+            Toast.makeText(this,"nav_share",Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_send) {
+            Toast.makeText(this,"nav_send",Toast.LENGTH_SHORT).show();
 
         }
 
