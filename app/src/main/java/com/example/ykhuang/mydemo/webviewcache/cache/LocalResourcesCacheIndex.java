@@ -4,7 +4,8 @@ package com.example.ykhuang.mydemo.webviewcache.cache;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.modo.core.util.SPUtil;
+
+import com.example.ykhuang.mydemo.webviewcache.SPUtil;
 
 import java.io.File;
 import java.io.IOException;

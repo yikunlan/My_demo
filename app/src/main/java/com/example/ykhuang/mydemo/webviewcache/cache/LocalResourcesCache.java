@@ -5,8 +5,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
-import com.modo.core.util.MDLogUtil;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -65,9 +63,9 @@ public class LocalResourcesCache {
         InputStream inputStream = null;
         try {
             inputStream = context.getAssets().open(resourcePath);
-            MDLogUtil.i("assets缓存》》》》",resourcePath);
+            Log.i("assets缓存》》》》",resourcePath);
         } catch (IOException e) {
-            MDLogUtil.i(getClass().getName(),">>>没有assst缓存");
+            Log.i(getClass().getName(),">>>没有assst缓存");
         }
         return inputStream;
     }
@@ -81,9 +79,9 @@ public class LocalResourcesCache {
                 return inputStream;
             }
             inputStream = new FileInputStream(file);
-            MDLogUtil.i(getClass().getName(),">>>本地缓存:"+resourcePath);
+            Log.i(getClass().getName(),">>>本地缓存:"+resourcePath);
         } catch (FileNotFoundException e) {
-            MDLogUtil.i(getClass().getName(),">>>没有本地缓存");
+            Log.i(getClass().getName(),">>>没有本地缓存");
         }
         return inputStream;
     }
@@ -241,7 +239,7 @@ public class LocalResourcesCache {
 
         LocalResourcesCacheIndex.getInstance(context).addLocalResourcesIndex(resourceUrl);
 
-        MDLogUtil.i("线程缓存到本地：",resourceUrl);
+        Log.i("线程缓存到本地：",resourceUrl);
 
         //放到sharepreference
 //        SPUtil.getInstance(context.getApplicationContext()).putFileUseTime(file.getName(),System.currentTimeMillis());
