@@ -3,7 +3,7 @@ package com.example.ykhuang.mydemo.webviewcache.cache;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
+
 
 import org.json.JSONObject;
 
@@ -82,9 +82,9 @@ public class RemoteResourcesManager {
         if (urlConn.getResponseCode() == 200) {
             // 获取返回的数据
             data = readStreamToString(urlConn.getInputStream());
-            Log.i("Get方式请求成功，返回数据如下：", data);
+//            MDLogUtil.i("Get方式请求成功，返回数据如下：", data);
         } else {
-            Log.e("Get Error", "Get方式请求失败");
+//            MDLogUtil.e("Get Error", "Get方式请求失败");
         }
         // 关闭连接
         urlConn.disconnect();

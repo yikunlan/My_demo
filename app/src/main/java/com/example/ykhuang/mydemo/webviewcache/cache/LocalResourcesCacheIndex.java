@@ -4,6 +4,7 @@ package com.example.ykhuang.mydemo.webviewcache.cache;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.modo.core.util.SPUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,9 +17,6 @@ public class LocalResourcesCacheIndex {
     private ConcurrentHashMap<String ,String> assetsResourcesIndex;
     private ConcurrentHashMap<String ,String> localResourcesIndex;
     private static Context mContext;
-
-    private boolean isInitAssetFinish = false;
-    private boolean isInitLocalFinish = false;
     private LocalResourcesCacheIndex() {
         // TODO: 2017/12/20 持久化两个链表，启动的时候取出，防止每次都缓存一遍
 
@@ -80,7 +78,9 @@ public class LocalResourcesCacheIndex {
      */
     public void initLocalResourcesIndex(Context context) {
         File rootFile = context.getApplicationContext().getExternalFilesDir(LocalResourcesManager.LOCAL_CACHE);
-        this.getAllfilePathByLoop(localResourcesIndex, rootFile);
+        if(rootFile!=null && rootFile.exists()) {
+            this.getAllfilePathByLoop(localResourcesIndex, rootFile);
+        }
     }
 
     /**
@@ -96,7 +96,7 @@ public class LocalResourcesCacheIndex {
             }
             if (tempFile.isFile()) {
                 list.add(tempFile.getAbsolutePath());
-//                isDeleFile(tempFile);
+                isDeleFile(tempFile);
             }
         }
     }
@@ -120,14 +120,14 @@ public class LocalResourcesCacheIndex {
      * 判断超过30天没有用就删掉这个文件缓存
      * @param file
      */
-//    private void isDeleFile(File file){
-//        long fileLastUseTime = SPUtil.getInstance(mContext).getFileLastSaveTime(file.getName());
-//        //30天的超时时间
-//        int lastUseTime = (int) ((System.currentTimeMillis() - fileLastUseTime)/(1000*60*60*24));
-//        if(lastUseTime >= 30){
-//            file.delete();
-//        }
-//    }
+    private void isDeleFile(File file){
+        long fileLastUseTime = SPUtil.getInstance(mContext).getFileLastSaveTime(file.getName());
+        //30天的超时时间
+        int lastUseTime = (int) ((System.currentTimeMillis() - fileLastUseTime)/(1000*60*60*24));
+        if(lastUseTime >= 30){
+            file.delete();
+        }
+    }
 
 
     /**

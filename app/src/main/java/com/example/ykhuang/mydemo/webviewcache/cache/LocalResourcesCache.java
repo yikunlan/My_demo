@@ -1,11 +1,11 @@
 package com.example.ykhuang.mydemo.webviewcache.cache;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
+import com.modo.core.util.MDLogUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,9 +37,9 @@ public class LocalResourcesCache {
         this.context = context;
     }
 
-    public static LocalResourcesCache getInstance(Activity activity){
+    public static LocalResourcesCache getInstance(Context context){
         if(localResourcesCache == null){
-            localResourcesCache = new LocalResourcesCache(activity);
+            localResourcesCache = new LocalResourcesCache(context);
         }
         return localResourcesCache;
     }
@@ -65,9 +65,9 @@ public class LocalResourcesCache {
         InputStream inputStream = null;
         try {
             inputStream = context.getAssets().open(resourcePath);
-            Log.i("assets缓存》》》》",resourcePath);
+            MDLogUtil.i("assets缓存》》》》",resourcePath);
         } catch (IOException e) {
-            Log.i(getClass().getName(),">>>没有assst缓存");
+            MDLogUtil.i(getClass().getName(),">>>没有assst缓存");
         }
         return inputStream;
     }
@@ -75,10 +75,15 @@ public class LocalResourcesCache {
     private InputStream getLocalCache(String resourcePath){
         InputStream inputStream = null;
         try {
-            inputStream = new FileInputStream(new File(resourcePath));
-            Log.i(getClass().getName(),">>>本地缓存");
+            File file = new File(resourcePath);
+            if(file.length()<=0){
+                file.delete();
+                return inputStream;
+            }
+            inputStream = new FileInputStream(file);
+            MDLogUtil.i(getClass().getName(),">>>本地缓存:"+resourcePath);
         } catch (FileNotFoundException e) {
-            Log.i(getClass().getName(),">>>没有本地缓存");
+            MDLogUtil.i(getClass().getName(),">>>没有本地缓存");
         }
         return inputStream;
     }
@@ -92,7 +97,7 @@ public class LocalResourcesCache {
      */
     public InputStream getResourceByCache(Uri httpURL){
 
-        long startTime = System.currentTimeMillis();
+//        long startTime = System.currentTimeMillis();
         InputStream inputStream = null;
         //判断是否是需要缓存的数据格式，如果不是的话就跳过
         if (LocalResourcesManager.getMimeTypeByUrl(httpURL) == null) {
@@ -175,7 +180,7 @@ public class LocalResourcesCache {
         inputStream = new FileInputStream(file);
 
         //放到sharepreference
-//        SPUtil.getInstance(context.getApplicationContext()).putFileUseTime(file.getName(), System.currentTimeMillis());
+//        SPUtil.getInstance(context.getApplicationContext()).putFileUseTime(file.getName(),System.currentTimeMillis());
 
         netCacheBean.inputStream = inputStream;
         Map<String, List<String>> headMap = urlConnection.getHeaderFields();
@@ -196,13 +201,12 @@ public class LocalResourcesCache {
 
 //        Log.i("地址：",httpURL.toString());
 
-        NetCacheBean netCacheBean = new NetCacheBean();
+//        NetCacheBean netCacheBean = new NetCacheBean();
         String resourceUrl = LocalResourcesManager.getLocalCachePath(context,httpURL);
 
         OutputStream outputStream = null;
 
         InputStream inputStream = null;
-
         File file = LocalResourcesManager.createLocalFile(resourceUrl);
         if(file == null){
             return;
@@ -237,10 +241,10 @@ public class LocalResourcesCache {
 
         LocalResourcesCacheIndex.getInstance(context).addLocalResourcesIndex(resourceUrl);
 
-        Log.i("线程缓存资源到本地：",resourceUrl);
+        MDLogUtil.i("线程缓存到本地：",resourceUrl);
 
         //放到sharepreference
-//        SPUtil.getInstance(context.getApplicationContext()).putFileUseTime(file.getName(), System.currentTimeMillis());
+//        SPUtil.getInstance(context.getApplicationContext()).putFileUseTime(file.getName(),System.currentTimeMillis());
     }
     /**
      * 这个是okhttp异步回调得到文件流的，下载的时候可以用，但是像本项目的话暂时不用，暂时用原来的可以及时建立流的方式缓存
