@@ -1,10 +1,19 @@
 package com.example.ykhuang.mydemo;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.iflytek.cloud.SpeechUtility;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 public class MyApplication extends Application {
+	public static RefWatcher getRefWatcher(Context context) {
+		MyApplication application = (MyApplication) context.getApplicationContext();
+		return application.refWatcher;
+	}
+
+	private RefWatcher refWatcher;
 
 	@Override
 	public void onCreate() {
@@ -21,6 +30,9 @@ public class MyApplication extends Application {
 		// 以下语句用于设置日志开关（默认开启），设置成false时关闭语音云SDK日志打印
 		// Setting.setShowLog(false);
 		super.onCreate();
+
+		//检测内存泄露
+		refWatcher = LeakCanary.install(this);
 	}
 	
 }

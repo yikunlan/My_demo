@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ykhuang.mydemo.MyApplication;
 import com.example.ykhuang.mydemo.R;
 
 /**
@@ -65,5 +66,12 @@ public class GetLayoutScreen extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View arg0) {
 		mImageView.setImageBitmap(mbBitmap);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+
+		MyApplication.getRefWatcher(this).watch(this);
 	}
 }

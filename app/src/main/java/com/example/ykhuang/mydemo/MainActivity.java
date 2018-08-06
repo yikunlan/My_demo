@@ -18,6 +18,7 @@ import com.example.ykhuang.mydemo.loading.MProgressDialog;
 import com.example.ykhuang.mydemo.rxjava.RxjavaActivity;
 import com.example.ykhuang.mydemo.screenshot.GetLayoutScreen;
 import com.example.ykhuang.mydemo.speek.SpeekActivity;
+import com.squareup.leakcanary.RefWatcher;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -92,6 +93,8 @@ public class MainActivity extends AppCompatActivity{
         super.onDestroy();
         //取消注册
         EventBus.getDefault().unregister(this);
+
+        MyApplication.getRefWatcher(this).watch(this);
     }
 
     /**
@@ -117,4 +120,5 @@ public class MainActivity extends AppCompatActivity{
 
         }
     }
+
 }
