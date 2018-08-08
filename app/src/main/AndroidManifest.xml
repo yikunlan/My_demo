@@ -74,7 +74,31 @@
         <activity android:name=".loading.MyProgressActivity" />
         <activity android:name=".loading.MProgressDialog" />
         <activity android:name=".webviewcache.MyWebviewActivity" />
+        <!-- 友盟第三方授权、分享需要添加的 -->
+        <activity
+            android:name="com.umeng.qq.tencent.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1105728874" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.umeng.qq.tencent.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".wxapi.WXEntryActivity"
+            android:exported="true"/>
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5a545e67f29d980964000201" />
+        <!--友盟结束-->
         <!-- 科大讯飞 -->
         <activity android:name=".speek.SpeekActivity" />
         <activity android:name=".speek.setting.TtsSettings" />
@@ -135,7 +159,8 @@
         <activity
             android:name=".demo_app.TabActivity"
             android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".login.LoginActivity"></activity>
     </application>
 
 </manifest>

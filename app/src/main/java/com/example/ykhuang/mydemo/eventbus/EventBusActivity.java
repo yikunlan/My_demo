@@ -18,7 +18,7 @@ import org.greenrobot.eventbus.EventBus;
 public class EventBusActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_rx_click;
     public static final int NOTIFY_MAIN_ACITIVITY = 0x001;
-    public static  String TAG = "TAG";
+    public final  String TAG = "TAG";
 
 
     public static void open(Context context){

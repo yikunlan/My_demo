@@ -6,6 +6,9 @@ import android.content.Context;
 import com.iflytek.cloud.SpeechUtility;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+import com.umeng.socialize.Config;
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
 
 public class MyApplication extends Application {
 	public static RefWatcher getRefWatcher(Context context) {
@@ -33,6 +36,17 @@ public class MyApplication extends Application {
 
 		//检测内存泄露
 		refWatcher = LeakCanary.install(this);
+
+
+		//友盟第三方
+		Config.DEBUG = true;//开启debug模式
+		UMShareAPI.get(this);
 	}
-	
+	{
+		//波波侠
+		//PlatformConfig.setWeixin("wxa78ad91ddf14515c", "e4fdcf8fd8a95fcf05b94487b5cde09d");
+		//卓越之翼
+		PlatformConfig.setWeixin("wx26ff6f8cd7314c18", "0e9558fd35edbe2666efe0dac1a866d3");
+		PlatformConfig.setQQZone("101455248", "16bb85c613f93ecfc1bc7f90d9070cef");
+	}
 }
