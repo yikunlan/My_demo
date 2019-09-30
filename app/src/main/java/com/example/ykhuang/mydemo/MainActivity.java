@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.ykhuang.mydemo.animation.AnimationActivity;
 import com.example.ykhuang.mydemo.demo_app.DemoMainActivity;
 import com.example.ykhuang.mydemo.demo_app.TabActivity;
 import com.example.ykhuang.mydemo.demo_app.WelcomeActivity;
+import com.example.ykhuang.mydemo.glide.GlideActivity;
 import com.example.ykhuang.mydemo.login.LoginActivity;
 import com.example.ykhuang.mydemo.mvvp.simple_demo.SimpleMvvmActivity;
+import com.example.ykhuang.mydemo.test.TestActivity;
 import com.example.ykhuang.mydemo.webviewcache.MyWebviewActivity;
 import com.example.ykhuang.mydemo.download.MulThreadDownload;
 import com.example.ykhuang.mydemo.eventbus.EventBusActivity;
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     @OnClick({R.id.tv_rxjava,R.id.tv_eventbus,R.id.getLayoutScreen,R.id.download,R.id.progress_dialog,R.id.webveiw_cache,
-    R.id.speek_btn,R.id.mvvm_btn,R.id.drawer_btn,R.id.tab_btn,R.id.third_btn})
+    R.id.speek_btn,R.id.mvvm_btn,R.id.drawer_btn,R.id.tab_btn,R.id.third_btn,R.id.anima_btn,R.id.test_btn,R.id.glide_btn})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_rxjava:
@@ -86,6 +89,15 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.third_btn:
                 startActivity(new Intent(this, LoginActivity.class));
+                break;
+            case R.id.anima_btn:
+                startActivity(new Intent(this, AnimationActivity.class));
+                break;
+            case R.id.test_btn:
+                startActivity(new Intent(this, TestActivity.class));
+                break;
+            case R.id.glide_btn:
+                startActivity(new Intent(this, GlideActivity.class));
                 break;
             default:
         }

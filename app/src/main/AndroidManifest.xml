@@ -52,6 +52,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -161,6 +162,12 @@
             android:label="@string/title_activity_tab"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".test.TestActivity"></activity>
+        <activity android:name=".glide.GlideActivity"></activity>
+        <activity
+            android:name=".animation.AnimationActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

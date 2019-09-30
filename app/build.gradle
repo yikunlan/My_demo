@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.example.ykhuang.mydemo"
         minSdkVersion 19
@@ -20,6 +20,7 @@ android {
         main {
             //这个配置是必须的，如果你的so文件放在了libs/armeabi/下，则下面srcDir = libs即可,如果放在'src / main / jniLibs '下就这么配置jniLibs.srcDirs = ['src / main / jniLibs ']
             jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['assets']
         }
     }
     //mvvm
@@ -29,27 +30,32 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support:design:26.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+    //noinspection GradleCompatible
+//    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     //rxjava2
-    compile 'io.reactivex.rxjava2:rxjava:2.0.4'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.17'
     //EventBus
-    compile 'org.greenrobot:eventbus:3.0.0'
+    implementation 'org.greenrobot:eventbus:3.0.0'
     //butterknife,这个搭配插件ButterKnife Zelezny使用更加方便快捷
-    compile 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     implementation files('libs/Sunflower.jar')
     //databinding的适配器
-    compile 'me.tatarka:bindingcollectionadapter:0.16'
+//    implementation 'me.tatarka:bindingcollectionadapter:0.16'
     // LeakCanary,检查 Android 内存泄漏
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+
     implementation files('libs/SocialSDK_WeChat_Simplify.jar')
     implementation files('libs/SocialSDK_QQ_Simplify.jar')
+
+    /************* Glide *************/
+    implementation "com.github.bumptech.glide:glide:4.9.0"
 }
